@@ -120,3 +120,7 @@ variable "vm_os_public_ssh_key" {
   type = string
 }
 
+variable "port" {
+  type = string
+}
+
