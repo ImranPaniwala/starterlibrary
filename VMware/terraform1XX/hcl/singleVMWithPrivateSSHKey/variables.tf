@@ -31,9 +31,6 @@ variable "vm_name" {
   type = string
 }
 
-variable "vm_ipv4_address" {
-  type = string
-}
 
 variable "vm_memory" {
   type = string
@@ -52,14 +49,6 @@ variable "vm_disk_keep_on_remove" {
   default = "false"
 }
 
-variable "vm_ipv4_gateway" {
-  type = string
-}
-
-variable "vm_ipv4_netmask" {
-  type = string
-}
-
 variable "vm_domain_name" {
   type = string
 }
@@ -74,14 +63,6 @@ variable "adapter_type" {
 
 variable "vm_folder" {
   type = string
-}
-
-variable "dns_servers" {
-  type = list(string)
-}
-
-variable "dns_suffixes" {
-  type = list(string)
 }
 
 variable "vm_clone_timeout" {
