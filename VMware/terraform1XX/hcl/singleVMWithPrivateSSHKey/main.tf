@@ -76,14 +76,8 @@ resource "vsphere_virtual_machine" "vm" {
         host_name = var.vm_name
       }
 
-      network_interface {
-        ipv4_address = var.vm_ipv4_address
-        ipv4_netmask = var.vm_ipv4_netmask
-      }
+      network_interface {}
 
-      ipv4_gateway    = var.vm_ipv4_gateway
-      dns_suffix_list = var.dns_suffixes
-      dns_server_list = var.dns_servers
     }
   }
 
