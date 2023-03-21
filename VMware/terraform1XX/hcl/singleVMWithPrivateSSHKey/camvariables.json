@@ -84,17 +84,6 @@
       "group_name": "custom_vm_attributes"
     },
     {
-      "name": "vm_ipv4_address",
-      "type": "string",
-      "description": "IPv4 address for vNIC configuration",
-      "hidden": false,
-      "label": "Virtual Machine IP Address",
-      "secured": false,
-      "required": true,
-      "immutable": false,
-      "group_name": "custom_vm_attributes"
-    },
-    {
       "name": "vm_memory",
       "label": "VM Memory Allocation (MB)",
       "type": "string",
@@ -274,58 +263,6 @@
       "immutable": false,
       "group_name": "vsphere_managed_inventory_definition"
     }, 
-    {
-      "name": "dns_servers",
-      "default":"${vsphere_managed_inventory_definition.dns_servers}",
-      "description": "A list of DNS servers to add on the virtual machine.",
-      "type": "list",
-      "required": true,
-      "secured": false,
-      "label": "DNS Servers",
-      "hidden": false,
-      "immutable": false,
-      "group_name": "vsphere_managed_inventory_definition"
-    }, 
-    {
-      "name": "dns_suffixes",
-      "default":"${vsphere_managed_inventory_definition.dns_suffixes}",
-      "description": "A list of DNS search domains to add to the DNS configuration on the virtual machine.",
-      "type": "list",
-      "required": true,
-      "secured": false,
-      "label": "DNS Suffixes",
-      "hidden": false,
-      "immutable": false,
-      "group_name": "vsphere_managed_inventory_definition"
-    }, 
-    {
-      "name": "vm_ipv4_gateway",
-      "default":"${vsphere_managed_inventory_definition.vm_ipv4_gateway}",
-      "description": "IPv4 Gateway Address for network customization on the virtual machine.",
-      "type": "string",
-      "required": true,
-      "secured": false,
-      "label": "IPv4 Gateway",
-      "hidden": false,
-      "immutable": false,
-      "regex": "^((25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9]).){3}(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])$",
-      "regexdesc": "Provide a Valid IP address for the Virtual Machine Gateway",
-      "group_name": "vsphere_managed_inventory_definition"
-    }, 
-    {
-      "name": "vm_ipv4_netmask",
-      "default":"${vsphere_managed_inventory_definition.vm_ipv4_netmask}",
-      "description": "Integer value between 1 and 32 for the prefix length (CIDR) to use when statically assigning an IPv4 address",
-      "type": "string",
-      "required": true,
-      "secured": false,
-      "label": "IPv4 Netmask (CIDR)",
-      "hidden": false,
-      "immutable": false,
-      "regex": "^([8-9]|[1-2][0-9]|3[0-2])$",
-      "regexdesc": "Provide an integer value between 1 and 32",
-      "group_name": "vsphere_managed_inventory_definition"
-    },
     {
       "name": "vm_clone_timeout",
       "description": "The timeout, in minutes, to wait for the virtual machine clone to complete.",
