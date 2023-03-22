@@ -18,6 +18,11 @@ data "vsphere_virtual_machine" "vm_image_template" {
   datacenter_id = data.vsphere_datacenter.datacenter.id
 }
 
+data "vsphere_network" "vm_network" {
+  name          = var.network
+  datacenter_id = data.vsphere_datacenter.datacenter.id
+}
+
 variable "allow_unverified_ssl" {
   description = "Communication with vSphere server with self signed certificate"
   default     = "true"
