@@ -81,11 +81,6 @@ resource "vsphere_virtual_machine" "vm" {
     }
   }
 
-   network_interface {
-    network_id   = data.vsphere_network.vm_network.id
-    adapter_type = var.adapter_type
-  }
-
 
   disk {
     label          = "${var.vm_name}.vmdk"
