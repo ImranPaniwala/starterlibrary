@@ -142,6 +142,18 @@
       "hidden": false,
       "immutable": false,
       "group_name": "vsphere_managed_inventory_definition"
+    },
+    {
+      "name": "network",
+      "default":"${vsphere_managed_inventory_definition.network}",
+      "description": "vSphere Network name.",
+      "type": "string",
+      "required": false,
+      "secured": false,
+      "label": "Network name",
+      "hidden": false,
+      "immutable": false,
+      "group_name": "vsphere_managed_inventory_definition"
     }, 
     {
       "name": "vm_folder",
