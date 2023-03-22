@@ -54,6 +54,9 @@ variable "vm_domain_name" {
   type = string
 }
 
+variable "network" {
+  type = string
+}
 variable "adapter_type" {
   type = string
 }
