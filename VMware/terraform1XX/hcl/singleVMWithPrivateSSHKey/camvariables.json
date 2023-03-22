@@ -144,18 +144,6 @@
       "group_name": "vsphere_managed_inventory_definition"
     },
     {
-      "name": "network",
-      "default":"${vsphere_managed_inventory_definition.network}",
-      "description": "vSphere Network name.",
-      "type": "string",
-      "required": false,
-      "secured": false,
-      "label": "Network name",
-      "hidden": false,
-      "immutable": false,
-      "group_name": "vsphere_managed_inventory_definition"
-    }, 
-    {
       "name": "vm_folder",
       "default":"${vsphere_managed_inventory_definition.vm_folder}",
       "description": "vSphere folder name to create the virtual vachine.",
@@ -251,6 +239,18 @@
       "immutable": false,
       "group_name": "vsphere_managed_inventory_definition"
     },
+    {
+      "name": "network",
+      "default":"${vsphere_managed_inventory_definition.network}",
+      "description": "vSphere Network name.",
+      "type": "string",
+      "required": false,
+      "secured": false,
+      "label": "Network name",
+      "hidden": false,
+      "immutable": false,
+      "group_name": "vsphere_managed_inventory_definition"
+    }, 
     {
       "name": "adapter_type",
       "default":"${vsphere_managed_inventory_definition.adapter_type}",
