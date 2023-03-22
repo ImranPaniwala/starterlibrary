@@ -116,7 +116,7 @@
       "secured": false,
       "hidden": false,
       "immutable": false,
-      "default": "20",
+      "default": "30",
       "group_name": "custom_vm_attributes"
     },
     {
@@ -244,7 +244,7 @@
       "default":"${vsphere_managed_inventory_definition.network}",
       "description": "vSphere Network name.",
       "type": "string",
-      "required": true,
+      "required": false,
       "secured": false,
       "label": "Network name",
       "hidden": false,
@@ -256,7 +256,7 @@
       "default":"${vsphere_managed_inventory_definition.adapter_type}",
       "description": "Network adapter type for vNIC Configuration",
       "type": "string",
-      "required": true,
+      "required": false,
       "secured": false,
       "label": "Network Adapter Type",
       "hidden": true,
