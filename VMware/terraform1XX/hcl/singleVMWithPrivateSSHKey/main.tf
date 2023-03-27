@@ -101,6 +101,11 @@ resource "vsphere_virtual_machine" "vm" {
     create_before_destroy = true
   }
 
+  provisioner "local-exec" {
+    command = "echo sleep; sleep 60"
+  }
+  
+  
   # Specify the connection
   # Specify the connection
   connection {
