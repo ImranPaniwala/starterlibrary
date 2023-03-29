@@ -55,7 +55,7 @@ resource "random_string" "random-dir" {
 resource "tls_private_key" "generate" {
   algorithm = "RSA"
   rsa_bits  = "4096"
-}
+}    
 
 resource "vsphere_virtual_machine" "vm" {
   name             = var.vm_name
@@ -102,14 +102,23 @@ resource "vsphere_virtual_machine" "vm" {
   }
 
   provisioner "local-exec" {
-    command = "echo sleep; sleep 60"
+    command = "echo ${self.default_ip_address}; echo sleep; sleep 60"
   }
   
   
   # Specify the connection
+
+}
+
+ resource "null_resource" "vmconfig_ssh_ip" {
+  # Changes to any instance of the cluster requires re-provisioning
+  triggers = {
+    vm_ip = vsphere_virtual_machine.vm.default_ip_address
+  }
+  
   # Specify the connection
   connection {
-    host        = self.default_ip_address
+    host        = vsphere_virtual_machine.vm.default_ip_address
     type        = "ssh"
     user        = var.vm_os_user
     password    = var.vm_os_password
@@ -195,6 +204,5 @@ EOF
       "bash -c 'chmod +x VM_add_ssh_key.sh'",
       "bash -c './VM_add_ssh_key.sh  \"${var.vm_os_user}\" \"${local.public_ssh_key}\" \"${local.private_ssh_key}\">> VM_add_ssh_key.log 2>&1'",
     ]
-  }
-}
-
+  }  
+ }
