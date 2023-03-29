@@ -92,7 +92,7 @@
       "secured": false,
       "hidden": false,
       "immutable": false,
-      "default": "1024",
+      "default": "2048",
       "group_name": "custom_vm_attributes"
     },
     {
@@ -104,7 +104,7 @@
       "secured": false,
       "hidden": false,
       "immutable": false,
-      "default": "1",
+      "default": "2",
       "group_name": "custom_vm_attributes"
     },
     {
