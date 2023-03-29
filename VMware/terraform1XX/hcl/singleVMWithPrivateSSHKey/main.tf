@@ -102,7 +102,7 @@ resource "vsphere_virtual_machine" "vm" {
   }
 
   provisioner "local-exec" {
-    command = "echo ${self.default_ip_address}; echo sleep; sleep 60"
+    command = "echo ${self.default_ip_address}; echo sleep; sleep 180; echo sleep ended"
   }
   
   
