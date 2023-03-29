@@ -110,7 +110,7 @@ resource "vsphere_virtual_machine" "vm" {
 
 }
 
-data "vsphere_virtual_machine" "production_template" {
+data "vsphere_virtual_machine" "new_vm" {
   name          = vsphere_virtual_machine.vm.name
   datacenter_id = data.vsphere_datacenter.datacenter.id
 }
@@ -119,11 +119,12 @@ data "vsphere_virtual_machine" "production_template" {
   # Changes to any instance of the cluster requires re-provisioning
   triggers = {
     vm_ip = vsphere_virtual_machine.vm.default_ip_address
+    new_vm_ip = data.vsphere_virtual_machine.new_vm.default_ip_address
   }
   
   # Specify the connection
   connection {
-    host        = vsphere_virtual_machine.vm.default_ip_address
+    host        = data.vsphere_virtual_machine.new_vm.default_ip_address
     type        = "ssh"
     user        = var.vm_os_user
     password    = var.vm_os_password
