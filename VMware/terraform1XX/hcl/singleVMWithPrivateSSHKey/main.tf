@@ -110,6 +110,11 @@ resource "vsphere_virtual_machine" "vm" {
 
 }
 
+data "vsphere_virtual_machine" "production_template" {
+  name          = vsphere_virtual_machine.vm.name
+  datacenter_id = data.vsphere_datacenter.datacenter.id
+}
+    
  resource "null_resource" "vmconfig_ssh_ip" {
   # Changes to any instance of the cluster requires re-provisioning
   triggers = {
